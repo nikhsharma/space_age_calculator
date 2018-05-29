@@ -59,6 +59,7 @@ if (age is 0):
     bday = input('Enter your birthday for a rough calculation (format:DD-MM-YYYY): ')
     bday = bday.split('-')
     age = calculate_rough_age_in_seconds(datetime(int(bday[2]), int(bday[1]), int(bday[0])))
+    print('You are %d seconds old!' % age)
 print('Do you want your age on: ')
 print('1. Earth')
 print('2. Mercury')
@@ -69,14 +70,37 @@ print('6. Saturn')
 print('7. Uranus')
 print('8. Neptune')
 print('9. Pluto')
-response = input('Please enter the corresponding number: ')
 
-if response is '1': print(int(calculate_age_on_earth(age)))
-if response is '2': print(calculate_age_on_mercury(age))
-if response is '3': print(calculate_age_on_venus(age))
-if response is '4': print(calculate_age_on_mars(age))
-if response is '5': print(calculate_age_on_jupiter(age))
-if response is '6': print(calculate_age_on_saturn(age))
-if response is '7': print(calculate_age_on_uranus(age))
-if response is '8': print(calculate_age_on_neptune(age))
-if response is '9': print(calculate_age_on_pluto(age))
+
+answer = False
+while answer != True:
+    response = input('Please enter the corresponding number: ')
+
+    if response is '1':
+        answer=True
+        print(int(calculate_age_on_earth(age)))
+    elif response is '2':
+        answer=True
+        print(calculate_age_on_mercury(age))
+    elif response is '3':
+        answer=True
+        print(calculate_age_on_venus(age))
+    elif response is '4':
+        answer=True, print(calculate_age_on_mars(age))
+    elif response is '5':
+        answer=True
+        print(calculate_age_on_jupiter(age))
+    elif response is '6':
+        answer=True
+        print(calculate_age_on_saturn(age))
+    elif response is '7':
+        answer=True
+        print(calculate_age_on_uranus(age))
+    elif response is '8':
+        answer=True
+        print(calculate_age_on_neptune(age))
+    elif response is '9':
+        answer=True
+        print(calculate_age_on_pluto(age))
+    else:
+        answer=False
