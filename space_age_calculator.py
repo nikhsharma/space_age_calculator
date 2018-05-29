@@ -1,7 +1,14 @@
+from datetime import datetime
+
 def print_header():
     print('----------------------------------------')
     print('         SPACE AGE CALCULATOR')
     print('----------------------------------------')
+
+
+def calculate_rough_age_in_seconds(date):
+    rough_age = (datetime.now() - date)
+    return rough_age.total_seconds()
 
 
 def calculate_age_on_earth(age):
@@ -40,15 +47,18 @@ def calculate_age_on_pluto(age):
     return int(calculate_age_on_earth(age)*248.00)
 
 
-
 #------------------
 # Program Start
 #------------------
 
 print_header()
 
-age = int(input('Enter your age in seconds: '))
+age = int(input('Enter your age in seconds (if you don\'t know, like a normal person, enter 0): '))
 
+if (age is 0):
+    bday = input('Enter your birthday for a rough calculation (format:DD-MM-YYYY): ')
+    bday = bday.split('-')
+    age = calculate_rough_age_in_seconds(datetime(int(bday[2]), int(bday[1]), int(bday[0])))
 print('Do you want your age on: ')
 print('1. Earth')
 print('2. Mercury')
