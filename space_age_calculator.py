@@ -10,7 +10,13 @@ def calculate_age_on_earth(age):
 def calculate_age_on_mercury(age):
     return int(calculate_age_on_earth(age)*0.2408467)
 
+def calculate_age_on_venus(age):
+    return int(calculate_age_on_earth(age)*0.61519726)
+
+
+#------------------
 # Program Start
+#------------------
 
 print_header()
 
@@ -19,7 +25,9 @@ age = int(input('Enter your age in seconds: '))
 print('Do you want your age on: ')
 print('1. Earth')
 print('2. Mercury')
+print('3. Venus')
 response = input('Please enter the corresponding number: ')
 
 if response is '1': print(calculate_age_on_earth(age))
 if response is '2': print(calculate_age_on_mercury(age))
+if response is '3': print(calculate_age_on_venus(age))
