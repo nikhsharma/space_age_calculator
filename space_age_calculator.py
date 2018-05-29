@@ -36,6 +36,10 @@ def calculate_age_on_neptune(age):
     return int(calculate_age_on_earth(age)*164.79132)
 
 
+def calculate_age_on_pluto(age):
+    return int(calculate_age_on_earth(age)*248.00)
+
+
 
 #------------------
 # Program Start
@@ -54,6 +58,7 @@ print('5. Jupiter')
 print('6. Saturn')
 print('7. Uranus')
 print('8. Neptune')
+print('9. Pluto')
 response = input('Please enter the corresponding number: ')
 
 if response is '1': print(int(calculate_age_on_earth(age)))
@@ -64,3 +69,4 @@ if response is '5': print(calculate_age_on_jupiter(age))
 if response is '6': print(calculate_age_on_saturn(age))
 if response is '7': print(calculate_age_on_uranus(age))
 if response is '8': print(calculate_age_on_neptune(age))
+if response is '9': print(calculate_age_on_pluto(age))
